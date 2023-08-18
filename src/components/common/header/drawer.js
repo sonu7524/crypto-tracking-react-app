@@ -3,7 +3,6 @@ import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { IconButton } from '@mui/material';
 import "./style.css";
-import { purple } from '@mui/material/colors';
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = useState(false);
