@@ -13,7 +13,7 @@ function Header() {
         <Link to={'/'} className='link' href="/">Home</Link>
         <Link className='link' href="/watchlist">Watchlist</Link>
         <Link className='link' href="/compare">Compare</Link>
-        <Link to={'/dashboard'} className='link'><Button text="Dashboard" onClick={()=> console.log("Button Clicked")} outLined={false} /></Link>
+        <Link to={'/dashboard'}><Button text="Dashboard" onClick={()=> console.log("Button Clicked")} outLined={false} /></Link>
         {/* <Button text="Dashboard" onClick={handleClick} outLined={true} /> */}
       </div>
       <div className="mobile-drawer">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/common/header";
-import SearchComponent from "../components/Dashboard/SearchComponent";
 import TabsComponent from "../components/Dashboard/TabsComponent";
 import axios from "axios";
 
@@ -17,7 +16,6 @@ function DashboardPage() {
   return (
     <div>
         <Header />
-        <SearchComponent />
         <TabsComponent coins={coins} />
     </div>
   );

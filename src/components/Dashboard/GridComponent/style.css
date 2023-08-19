@@ -1,6 +1,6 @@
 .coin-container{
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
     background-color: var(--darkgrey);
     border: 2px solid var(--darkgrey);
     border-radius: 1rem;
@@ -52,13 +52,16 @@
     text-transform: uppercase;
 }
 
+.coin-price-change{
+    margin-top: 1rem;
+}
+
 .red{
     color: var(--red);
     border: 2px solid var(--red);
     padding: 0.3rem 1rem;
     border-radius: 1.5rem;
     width: fit-content;
-    margin-top: 2rem;
 }
 .green{
     color: var(--green);
@@ -66,7 +69,6 @@
     padding: 0.3rem 1rem;
     border-radius: 2rem;
     width: fit-content;
-    margin-top: 2rem;
 }
 
 .red:hover{
@@ -80,11 +82,13 @@
     transform: all 0.3s;
 }
 
+.current-price{
+    margin-top: 2rem;
+}
 .current-price-red{
     color: var(--red);
     font-size: 1.5rem;
     font-weight: bolder;
-    margin-top: 1rem;
     border: none;
 }
 
@@ -92,7 +96,6 @@
     color: var(--green);
     font-size: 1.5rem;
     font-weight: bolder;
-    margin-top: 1rem;
 }
 .coin-percentage{
     display: flex;

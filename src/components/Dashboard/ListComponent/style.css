@@ -1,0 +1,29 @@
+.list-component{
+    width: 90vw;
+    display: flex ;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+}
+
+tr{
+    border-radius: 1rem;
+    padding: 1rem;
+}
+tr:hover{
+    background-color: var(--darkgrey);
+    transform: all 0.3s;
+}
+
+td{
+    width: 10vw;
+    text-align: center;
+    color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+   
+    td{
+        width:5vw;
+    }
+}

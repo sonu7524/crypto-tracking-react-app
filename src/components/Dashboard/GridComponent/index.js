@@ -7,9 +7,11 @@ import {motion} from 'framer-motion';
 export default function GridComponent({ coin }) {
   return (
     <motion.div
-        initial={{opacity: 0, x: 100}}
-        animate={{opacity: 1, x: 0}}
-        transition={{duration: 1}}
+        initial={{opacity: 0, y: 100}}
+        animate={{opacity: 1, y: 0}}
+        transition={{
+            type: "smooth",
+            duration: 2}}
     className={`coin-container ${coin.price_change_percentage_24h < 0 && "coin-container-red"}`}>
         <div className="coin-item">
             <img className="coin-image" src={coin.image} alt="coin" />
@@ -31,7 +33,7 @@ export default function GridComponent({ coin }) {
                 </div>
             )}
         </div>
-        <div>
+        <div className="current-price">
         {coin.price_change_percentage_24h < 0 ? 
             <p className="current-price-red">${coin.current_price.toFixed(3)}</p> : <p className="current-price-green">${coin.current_price.toFixed(3)}</p>
         }
