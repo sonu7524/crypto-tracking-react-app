@@ -49,8 +49,8 @@
         display: none !important;
     }
     .list-row td {
-        margin: 0.2rem;
-        padding: 0.2rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
     }
 }
 
@@ -87,7 +87,7 @@
 
 @media only screen and (max-width: 500px) {
     .td-image{
-        width: 1.5rem;
+        width: 1rem !important;
     }
     .td-image > img{
         width: 1.5rem;

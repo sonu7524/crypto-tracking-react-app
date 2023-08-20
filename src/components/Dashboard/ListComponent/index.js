@@ -4,11 +4,20 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { Tooltip } from "@mui/material";
 import {convertNumbers} from "../../../functions/convertNumbers";
+import {motion} from 'framer-motion';
 
 function ListComponent({coin}) {
   console.log(convertNumbers(coin.market_cap));
   return (
-    <tr className="list-row">
+    <motion.tr 
+    initial={{opacity: 0, y: 100}}
+    animate={{opacity: 1, y: 0}}
+    transition={{
+        type: "smooth",
+        duration: 2
+    }}
+    
+    className="list-row">
       <Tooltip title="Coin Logo" placement="bottom">
       <td className="td-image"><img className="coin-image" src={coin.image} alt="img" /></td>
       </Tooltip>
@@ -49,7 +58,7 @@ function ListComponent({coin}) {
         <Tooltip title="Total Volume" placement="bottom-end">
         <td className="market-details td-align-right total-volume"><p>${coin.total_volume.toLocaleString()}</p></td>
         </Tooltip>
-    </tr>
+    </motion.tr>
   );
 }
 

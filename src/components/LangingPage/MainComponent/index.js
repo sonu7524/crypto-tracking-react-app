@@ -29,7 +29,10 @@ function MainComponent() {
                 initial={{opacity: 0, y: 100}}
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 1}} 
-                className="description-text">Tracking crypto status through a public api in real time. Visit to the dashboard now!</motion.p>
+                className="description-text">Tracking crypto status through a public api in real time. </motion.p>
+                <motion.p initial={{opacity: 0, y: 100}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 1}} className="description-text">Visit to the dashboard now!</motion.p>
                 <motion.div
                 initial={{opacity: 0, x: 100}}
                 animate={{opacity: 1, x: 0}}
