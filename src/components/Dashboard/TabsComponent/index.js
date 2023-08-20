@@ -44,9 +44,11 @@ function TabsComponent({coins}) {
             } )}
         </TabPanel>
         <TabPanel className='list-view' value="list">
-            {coins.map((coin, id) =>{
-                return <ListComponent key={id} coin={coin} />
-            })}
+            <table className="list-table">
+                {coins.map((coin, id) =>{
+                      return <ListComponent key={id} coin={coin} />
+                })}
+            </table>
         </TabPanel>
       </TabContext>
     </ThemeProvider>

@@ -11,7 +11,8 @@ export default function GridComponent({ coin }) {
         animate={{opacity: 1, y: 0}}
         transition={{
             type: "smooth",
-            duration: 2}}
+            duration: 2
+        }}
     className={`coin-container ${coin.price_change_percentage_24h < 0 && "coin-container-red"}`}>
         <div className="coin-item">
             <img className="coin-image" src={coin.image} alt="coin" />

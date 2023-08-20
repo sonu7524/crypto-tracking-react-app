@@ -8,7 +8,10 @@ function Header() {
 
   return (
     <header className="header">
-      <h1 className="logo">TrackCryptoPro<span>.</span></h1>
+      <button data-text="Awesome" class="button">
+    <span class="actual-text">&nbsp;TrackCryptoPro.&nbsp;</span>
+    <span class="hover-text" aria-hidden="true">&nbsp;TrackCryptoPro.&nbsp;</span>
+</button>
       <div className="links">
         <Link to={'/'} className='link' href="/">Home</Link>
         <Link className='link' href="/watchlist">Watchlist</Link>
