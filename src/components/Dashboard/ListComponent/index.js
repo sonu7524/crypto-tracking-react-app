@@ -8,7 +8,7 @@ function ListComponent({coin}) {
   return (
     <tr className="list-row">
       <Tooltip title="Coin Logo" placement="bottom">
-      <td className="td-image"><img className="coin-image" src={coin.image} /></td>
+      <td className="td-image"><img className="coin-image" src={coin.image} alt="img" /></td>
       </Tooltip>
       <Tooltip title="Coin Name" placement="bottom">
         <td>
