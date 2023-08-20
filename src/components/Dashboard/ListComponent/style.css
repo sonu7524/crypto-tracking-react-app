@@ -28,6 +28,10 @@
     text-align: right !important;
 }
 
+.mobile-mkt-cap{
+    display: none !important;
+}
+
 @media only screen and (max-width: 1050px) {
      .td-icon{
         display: none !important;
@@ -37,6 +41,80 @@
 @media only screen and (max-width: 880px) {
     .total-volume{
         display: none !important;
+    }
+    .mobile-mkt-cap{
+        display: block !important;
+    }
+    .desktop-mkt-cap{
+        display: none !important;
+    }
+    .list-row td {
+        margin: 0.2rem;
+        padding: 0.2rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .td-image{
+        width: 2rem;
+    }
+    .td-image > img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .td-coin-name{
+        min-width: none;
+        font-size: 0.8rem !important;
+    }
+    .td-coin-sym{
+        min-width: none;
+        font-size: 0.5rem !important;
+    }
+    .td-price{
+        font-size: 0.8rem !important;
+    }
+    .list-row td {
+        margin: 0.3rem;
+        padding: 0.1rem;
+    }
+    .td-percentage{
+        font-size: 0.6rem;
+        padding: 0.1rem 0.4rem;
+        border-radius: 1rem;
+        min-width: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .td-image{
+        width: 1.5rem;
+    }
+    .td-image > img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .td-coin-symbol{
+        min-width: none;
+        font-size: 0.2rem !important;
+    }
+    .td-coin-name{
+        min-width: none;
+        font-size: 0.6rem !important;
+    }
+    .td-price{
+        font-size: 0.7rem !important;
+    }
+    .td-percentage{
+        font-size: 0.5rem;
+        padding: 0.1rem 0.3rem;
+        border-radius: 1rem;
+        min-width: 50px;
+    }
+    .mobile-mkt-cap{
+        font-size: 0.6rem;
+    }
+    tr{
+        border-radius: 0.1rem;
     }
 }
 
