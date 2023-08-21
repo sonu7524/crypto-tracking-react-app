@@ -16,7 +16,11 @@ function LineChart({ chartData, priceType, multiAxis }) {
             mode: "index",
         },
     };
-    return <Line data={chartData} options={options} />;
+    return (
+        <div className="line-chart">
+            <Line className="line-chart" data={chartData} options={options} />
+        </div>
+    );
 }
 
 export default LineChart;
