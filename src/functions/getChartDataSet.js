@@ -1,4 +1,5 @@
 import { convertDate } from "./convertDate";
+import { convertNumbers } from "./convertNumbers";
 export const getChartDataSet = (pricesData, label, color) => {
     let dataSet = {};
     if(pricesData.length > 0){

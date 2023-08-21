@@ -1,3 +1,4 @@
+import React from "react";
 export const convertNumbers = (num) => {
 
     const number = num.toLocaleString();

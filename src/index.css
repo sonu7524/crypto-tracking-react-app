@@ -61,3 +61,15 @@ img {
   border-radius: 0.8rem;
   padding: 0rem 0.5rem;
 }
+
+.select-group{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.select-group > p{
+    color: var(--grey);
+}

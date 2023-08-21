@@ -8,9 +8,10 @@ import CoinInfo from "../components/coin/coinInfo";
 import { getCoinData } from "../functions/getCoinData";
 import { getCoinPrices } from "../functions/getCoinPrices";
 import LineChart from "../components/coin/LineChart";
-import { convertDate } from "../functions/convertDate";
 import SelectGroup from "../components/common/SelectGroup";
 import { getChartDataSet } from "../functions/getChartDataSet";
+import { selectDataSet } from "../functions/selectDataSet";
+import ToggleComponent from "../components/coin/ToggleButton";
 
 function CoinPage() {
 
@@ -19,27 +20,32 @@ function CoinPage() {
     const [coinData, setCoinData] = useState();
     const [days, setDays] = useState(30);
     const [dataSet, setDataSet] = useState({});
+    const [alignment, setAlignment] = useState('current_price');
 
     useEffect(() => {
         if(id){
             getData();
         }
-    },[id, days]);
+    },[id, days, coinData, dataSet, isLoading]);
 
     async function getData(){
         const data = await getCoinData(id);
         if(data){
-            convertCoinObject(setCoinData,data);
-            const pricesData = await getCoinPrices(id, days);
+            convertCoinObject(setCoinData, data);
+            const pricesData = await getCoinPrices(id, days, alignment);
             if(pricesData){
+                //console.log(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
                 setDataSet(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
-                console.log(dataSet);
+                
                 setIsLoading(false);
             }
 
         }
             
     }
+    //console.log(dataSet);
+    
+    console.log(selectDataSet);
         
   return (
     <div>
@@ -50,7 +56,11 @@ function CoinPage() {
                     <ListComponent coin={coinData} />
                 </div>
                 <div className="grey-wrapper">
-                    <SelectGroup days={days} handleSelectChange={(e) => setDays(e.target.value)} />
+                    <div className="select-group">
+                        <p>{alignment} in</p>
+                        <SelectGroup priceType={alignment} selectDataSet={selectDataSet} handleSelectChange={(e) => setDays(e.target.value)} />
+                    </div>
+                    <ToggleComponent alignment={alignment} setAlignment={setAlignment} />
                     <LineChart chartData={dataSet} />
                 </div>
                 <CoinInfo heading={coinData.name} desc={coinData.desc} />

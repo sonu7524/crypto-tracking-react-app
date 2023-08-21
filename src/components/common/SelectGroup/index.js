@@ -3,12 +3,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import './style.css';
 
-export default function SelectGroup({priceType ,days, handleSelectChange}) {
-
+export default function SelectGroup({priceType ,selectDataSet, handleSelectChange}) { 
   return (
     <div className='select-group'>
         <FormControl sx={{
+            
             backgroundColor: "transparent",
             borderRadius: "5px",
             boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.75)",
@@ -39,21 +40,17 @@ export default function SelectGroup({priceType ,days, handleSelectChange}) {
                 },
             },
         }} >
-        <InputLabel id="demo-simple-select-label">Price in </InputLabel>
+        <InputLabel id="demo-simple-select-label">{priceType}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={days}
           label="Days"
           onChange={handleSelectChange}
         >
-          <MenuItem value={1}>24hrs</MenuItem>
-          <MenuItem  value={7}>7 days</MenuItem>
-          <MenuItem  value={30}>30 days</MenuItem>
-          <MenuItem value={90}>3 Months</MenuItem>
-          <MenuItem  value={365}>1 year</MenuItem>
+          {selectDataSet.map((item, index) => <MenuItem key={index} value={item.value}>{item.label}</MenuItem>)}
         </Select>
         </FormControl>
     </div>
+    
   );
 }
