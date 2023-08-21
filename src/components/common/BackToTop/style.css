@@ -1,0 +1,21 @@
+.back-to-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--darkgrey);
+    color: var(--purple);
+    z-index: 1000;
+    border: 1px solid var(--purple);
+}
+.back-to-top:hover{
+    cursor: pointer;
+    background-color: var(--purple);
+    color: var(--white);
+    transition: all 0.3s;
+}

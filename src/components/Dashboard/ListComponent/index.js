@@ -5,10 +5,12 @@ import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { Tooltip } from "@mui/material";
 import {convertNumbers} from "../../../functions/convertNumbers";
 import {motion} from 'framer-motion';
+import { Link } from "react-router-dom";
 
 function ListComponent({coin}) {
   console.log(convertNumbers(coin.market_cap));
   return (
+    <Link to={`/coin/${coin.id}`} className="coin-link">
     <motion.tr 
     initial={{opacity: 0, y: 100}}
     animate={{opacity: 1, y: 0}}
@@ -23,8 +25,9 @@ function ListComponent({coin}) {
       </Tooltip>
       <Tooltip title="Coin Name" placement="bottom">
         <td>
-                <p className="coin-name td-coin-name">{coin.name}</p>
                 <p className="coin-symbol td-coin-sym">{coin.symbol}</p>
+                <p className="coin-name td-coin-name">{coin.name}</p>
+                
         </td>
         </Tooltip>
         <Tooltip title="Percentage Change In 24hrs" placement="bottom">
@@ -59,6 +62,7 @@ function ListComponent({coin}) {
         <td className="market-details td-align-right total-volume"><p>${coin.total_volume.toLocaleString()}</p></td>
         </Tooltip>
     </motion.tr>
+    </Link>
   );
 }
 

@@ -4,12 +4,10 @@ import Button from "../../common/button";
 import iphone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import {motion} from "framer-motion";
+import {Link} from "react-router-dom";
 
 function MainComponent() {
 
-    const handleDashboardBtn = () => {
-        window.location.href = "/dashboard";
-    }
     return (
         <div className="landing-flex">
             <div className="left-component">
@@ -38,7 +36,7 @@ function MainComponent() {
                 animate={{opacity: 1, x: 0}}
                 transition={{duration: 2}} 
                 className="button-container">
-                    <Button onClick={handleDashboardBtn} text="Dashboard" />
+                    <Link to="/dashboard"><Button onClick={()=> console.log("button clicked")} text="Dashboard" /></Link>
                     <Button text="Share" outLined={true} />
                 </motion.div>
             </div>

@@ -38,19 +38,19 @@
     align-items: flex-start;
     gap: 0.5rem;
 }
-
-.coin-name{
+.coin-symbol{
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
+    text-transform: uppercase;
+}
+.coin-name{
+    font-size: 0.8rem;
+    color: var(--grey);
     text-transform: capitalize;
 }
 
-.coin-symbol{
-    font-size: 0.8rem;
-    color: var(--grey);
-    text-transform: uppercase;
-}
+
 
 .coin-price-change{
     margin-top: 2rem;

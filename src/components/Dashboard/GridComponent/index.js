@@ -3,9 +3,11 @@ import "./style.css";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import {motion} from 'framer-motion';
+import { Link } from "react-router-dom";
 
-export default function GridComponent({ coin }) {
+export default function GridComponent({ coin}) {
   return (
+    <Link to={`/coin/${coin.id}`} className="coin-link">
     <motion.div
         initial={{opacity: 0, y: 100}}
         animate={{opacity: 1, y: 0}}
@@ -17,8 +19,9 @@ export default function GridComponent({ coin }) {
         <div className="coin-item">
             <img className="coin-image" src={coin.image} alt="coin" />
             <div className="coin-details">
+            <p className="coin-symbol">{coin.symbol}</p>
                 <p className="coin-name">{coin.name}</p>
-                <p className="coin-symbol">{coin.symbol}</p>
+                
             </div>
         </div>
         <div className="coin-price-change">
@@ -44,5 +47,6 @@ export default function GridComponent({ coin }) {
             <p><b>Total Volume:</b> ${coin.total_volume.toLocaleString()}</p>
         </div>
     </motion.div>
+    </Link>
   );
 }
