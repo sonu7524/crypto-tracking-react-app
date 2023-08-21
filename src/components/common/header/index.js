@@ -14,8 +14,8 @@ function Header() {
 </button>
       <div className="links">
         <Link to={'/'} className='link' href="/">Home</Link>
-        <Link className='link' to={"/watchlist"}>Watchlist</Link>
-        <Link className='link' to={"/compare"} >Compare</Link>
+        {/* <Link className='link' to={"/watchlist"}>Watchlist</Link>
+        <Link className='link' to={"/compare"} >Compare</Link> */}
         <Link to={'/dashboard'}><Button text="Dashboard" onClick={()=> console.log("Button Clicked")} outLined={false} /></Link>
         {/* <Button text="Dashboard" onClick={handleClick} outLined={true} /> */}
       </div>
