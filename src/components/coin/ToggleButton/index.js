@@ -7,7 +7,7 @@ import './style.css';
 export default function ToggleComponent({priceType, setPriceType}) {
 
   const handleChange = (event, newAlignment) => {
-    setAlignment(newAlignment);
+    setPriceType(newAlignment);
   };
 
   const theme = createTheme({
@@ -24,7 +24,7 @@ export default function ToggleComponent({priceType, setPriceType}) {
         <ToggleButtonGroup
           color="primary"
           sx={{border:"1px solid var(--purple)", borderRadius:"5px"}}
-          value={alignment}
+          value={priceType}
           exclusive
           onChange={handleChange}
           aria-label="Platform"
