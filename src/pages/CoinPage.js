@@ -20,7 +20,7 @@ function CoinPage() {
     const [coinData, setCoinData] = useState();
     const [days, setDays] = useState(30);
     const [dataSet, setDataSet] = useState({});
-    const [alignment, setAlignment] = useState('current_price');
+    const [priceType, setPriceType] = useState('current_price');
 
     useEffect(() => {
         if(id){
@@ -32,7 +32,7 @@ function CoinPage() {
         const data = await getCoinData(id);
         if(data){
             convertCoinObject(setCoinData, data);
-            const pricesData = await getCoinPrices(id, days, alignment);
+            const pricesData = await getCoinPrices(id, days, priceType);
             if(pricesData){
                 //console.log(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
                 setDataSet(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
@@ -43,9 +43,6 @@ function CoinPage() {
         }
             
     }
-    //console.log(dataSet);
-    
-    console.log(selectDataSet);
         
   return (
     <div>
@@ -56,12 +53,9 @@ function CoinPage() {
                     <ListComponent coin={coinData} />
                 </div>
                 <div className="grey-wrapper">
-                    <div className="select-group">
-                        <p>{alignment} in</p>
-                        <SelectGroup priceType={alignment} selectDataSet={selectDataSet} handleSelectChange={(e) => setDays(e.target.value)} />
-                    </div>
-                    <ToggleComponent alignment={alignment} setAlignment={setAlignment} />
-                    <LineChart chartData={dataSet} />
+                <SelectGroup selectDataSet={selectDataSet} handleSelectChange={(e) => setDays(e.target.value)} />
+                    <ToggleComponent alignment={priceType} setAlignment={setPriceType} />
+                    <LineChart priceType={priceType} chartData={dataSet} />
                 </div>
                 <CoinInfo heading={coinData.name} desc={coinData.desc} />
                 

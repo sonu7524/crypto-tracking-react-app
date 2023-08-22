@@ -1,5 +1,15 @@
 .select-group{
-    width: 100%;
-    padding: 1rem;
-    text-align: start;
+   display: flex;
+   justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .select-group{
+        gap: 0.5rem;
+        padding: 1rem 0rem;
+    }
+}
+    

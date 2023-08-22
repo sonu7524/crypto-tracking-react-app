@@ -12,8 +12,8 @@ function ListComponent({coin}) {
   return (
     <Link to={`/coin/${coin.id}`} className="coin-link">
     <motion.tr 
-    initial={{opacity: 0, y: 100}}
-    animate={{opacity: 1, y: 0}}
+    initial={{opacity: 0, x: -100}}
+    animate={{opacity: 1, x: 0}}
     transition={{
         type: "smooth",
         duration: 2

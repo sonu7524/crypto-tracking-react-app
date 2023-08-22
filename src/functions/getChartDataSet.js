@@ -11,7 +11,7 @@ export const getChartDataSet = (pricesData, label, color) => {
                     data: pricesData.map((item) => item[1]),
                     fill: true,
                     tension: 0.25,
-                    backgroundColor: "transparent",
+                    backgroundColor: "#240b26",
                     borderColor: color,
                     pointRadius: 0,
                 },

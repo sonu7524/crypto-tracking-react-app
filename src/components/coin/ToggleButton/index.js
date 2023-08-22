@@ -4,7 +4,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { createTheme, ThemeProvider } from '@mui/material';
 import './style.css';
 
-export default function ToggleComponent({alignment, setAlignment}) {
+export default function ToggleComponent({priceType, setPriceType}) {
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -23,14 +23,15 @@ export default function ToggleComponent({alignment, setAlignment}) {
         <ThemeProvider theme={theme}>
         <ToggleButtonGroup
           color="primary"
+          sx={{border:"1px solid var(--purple)", borderRadius:"5px"}}
           value={alignment}
           exclusive
           onChange={handleChange}
           aria-label="Platform"
         >
-      <ToggleButton sx={{color:"var(--grey)", border:"1px solid var(--grey)"}} value="current_price">PRICE</ToggleButton>
-      <ToggleButton sx={{color:"var(--grey)", border:"1px solid var(--grey)"}} value="market_cap">MKT CAP</ToggleButton>
-      <ToggleButton sx={{color:"var(--grey)", border:"1px solid var(--grey)"}} value="total_volume">VOLUME</ToggleButton>
+      <ToggleButton sx={{color:"var(--purple)", border:"1px solid var(--grey)"}} value="current_price">PRICE</ToggleButton>
+      <ToggleButton sx={{color:"var(--purple)", border:"1px solid var(--grey)"}} value="market_cap">MKT CAP</ToggleButton>
+      <ToggleButton sx={{color:"var(--purple)", border:"1px solid var(--grey)"}} value="total_volume">VOLUME</ToggleButton>
     </ToggleButtonGroup>
     </ThemeProvider>
     </div>

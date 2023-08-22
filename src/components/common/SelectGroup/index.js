@@ -5,43 +5,25 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './style.css';
 
-export default function SelectGroup({priceType ,selectDataSet, handleSelectChange}) { 
+export default function SelectGroup({selectDataSet, handleSelectChange}) { 
   return (
     <div className='select-group'>
-        <FormControl sx={{
-            
-            backgroundColor: "transparent",
-            borderRadius: "5px",
-            boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.75)",
-            '& .MuiInputBase-root': {
-                color: "var(--grey)",
-                fontSize: "0.8rem",
+        <p>Price change in last</p>
+        <Select sx={{
+            height: '2.5rem',
+            color: 'var(--white)',
+            "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "var(--white)",
             },
-            '& .MuiInputLabel-root': {
-                color: "var(--grey)",
-                fontSize: "0.8rem",
+            "& .MuiSvgIcon-root": {
+                color: "var(--white)",
             },
-            '& .MuiSelect-root': {
-                color: "var(--grey)",
-                fontSize: "0.8rem",
-            },
-            '& .MuiSelect-icon': {
-                color: "var(--grey)",
-            },
-            '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                    borderColor: "var(--grey)",
-                },
-                '&:hover fieldset': {
-                    borderColor: "var(--grey)",
-                },
-                '&.Mui-focused fieldset': {
-                    borderColor: "var(--grey)",
+            "&:focus": {
+                "&& fieldset": {
+                    borderColor: "var(--purple)",
                 },
             },
-        }} >
-        <InputLabel id="demo-simple-select-label">{priceType}</InputLabel>
-        <Select
+        }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Days"
@@ -49,7 +31,6 @@ export default function SelectGroup({priceType ,selectDataSet, handleSelectChang
         >
           {selectDataSet.map((item, index) => <MenuItem key={index} value={item.value}>{item.label}</MenuItem>)}
         </Select>
-        </FormControl>
     </div>
     
   );

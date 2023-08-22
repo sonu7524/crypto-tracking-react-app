@@ -8,6 +8,8 @@
   --blue: #3a80e9;
   --green: #61c96f;
   --red: #f94141;
+  --darkgreen: #1d3820;
+  --darkred: #3d1212;
 }
 
 body {
@@ -60,16 +62,4 @@ img {
   margin: 1.5rem auto;
   border-radius: 0.8rem;
   padding: 0rem 0.5rem;
-}
-
-.select-group{
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-    align-items: flex-start;
-    gap: 0.5rem;
-}
-
-.select-group > p{
-    color: var(--grey);
 }
