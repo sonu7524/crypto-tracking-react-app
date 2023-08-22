@@ -54,7 +54,7 @@ function CoinPage() {
                 </div>
                 <div className="grey-wrapper">
                 <SelectGroup selectDataSet={selectDataSet} handleSelectChange={(e) => setDays(e.target.value)} />
-                    <ToggleComponent alignment={priceType} setAlignment={setPriceType} />
+                    <ToggleComponent alignment={priceType} setPriceType={setPriceType} />
                     <LineChart priceType={priceType} chartData={dataSet} />
                 </div>
                 <CoinInfo heading={coinData.name} desc={coinData.desc} />

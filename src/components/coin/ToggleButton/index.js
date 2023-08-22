@@ -6,8 +6,8 @@ import './style.css';
 
 export default function ToggleComponent({priceType, setPriceType}) {
 
-  const handleChange = (event, newAlignment) => {
-    setPriceType(newAlignment);
+  const handleChange = (event, value) => {
+    setPriceType(value);
   };
 
   const theme = createTheme({
