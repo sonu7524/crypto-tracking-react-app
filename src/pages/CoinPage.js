@@ -3,15 +3,14 @@ import Header from "../components/common/header";
 import { useParams } from "react-router-dom";
 import Loader from "../components/common/Loader";
 import ListComponent from "../components/Dashboard/ListComponent";
-import { convertCoinObject } from "../functions/covertObject";
+import { convertCoinObject } from "../functions/convertCoinObject";
 import CoinInfo from "../components/coin/coinInfo";
 import { getCoinData } from "../functions/getCoinData";
 import { getCoinPrices } from "../functions/getCoinPrices";
 import LineChart from "../components/coin/LineChart";
-import SelectGroup from "../components/common/SelectGroup";
+import SelectDays from "../components/common/SelectDays";
 import { getChartDataSet } from "../functions/getChartDataSet";
-import { selectDataSet } from "../functions/selectDataSet";
-import ToggleComponent from "../components/coin/ToggleButton";
+import ToggleComponent from "../components/common/ToggleButton";
 
 function CoinPage() {
 
@@ -34,8 +33,8 @@ function CoinPage() {
             convertCoinObject(setCoinData, data);
             const pricesData = await getCoinPrices(id, days, priceType);
             if(pricesData){
-                //console.log(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
-                setDataSet(getChartDataSet(pricesData, `prices in ${days} days`, "#8a3ffc"));
+                
+                setDataSet(getChartDataSet(pricesData, "#8a3ffc"));
                 
                 setIsLoading(false);
             }
@@ -53,7 +52,7 @@ function CoinPage() {
                     <ListComponent coin={coinData} />
                 </div>
                 <div className="grey-wrapper">
-                <SelectGroup selectDataSet={selectDataSet} handleSelectChange={(e) => setDays(e.target.value)} />
+                    <SelectDays days={days} setDays={setDays} />
                     <ToggleComponent alignment={priceType} setPriceType={setPriceType} />
                     <LineChart priceType={priceType} chartData={dataSet} />
                 </div>

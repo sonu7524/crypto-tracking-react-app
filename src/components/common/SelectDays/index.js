@@ -1,11 +1,14 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
+
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
+
 import Select from '@mui/material/Select';
 import './style.css';
 
-export default function SelectGroup({selectDataSet, handleSelectChange}) { 
+export default function SelectGroup({days, setDays}) { 
+  const handleSelectChange = (event) => {
+    setDays(event.target.value);
+  };
   return (
     <div className='select-group'>
         <p>Price change in last</p>
@@ -27,9 +30,16 @@ export default function SelectGroup({selectDataSet, handleSelectChange}) {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Days"
+          value={days}
           onChange={handleSelectChange}
         >
-          {selectDataSet.map((item, index) => <MenuItem key={index} value={item.value}>{item.label}</MenuItem>)}
+          <MenuItem value={1}>24hrs</MenuItem>
+          <MenuItem value={7}>7 days</MenuItem>
+          <MenuItem value={30}>1 Month</MenuItem>
+          <MenuItem value={60}>2 Months</MenuItem>
+          <MenuItem value={90}>3 Months</MenuItem>
+          <MenuItem value={365}>1 Year</MenuItem>
+          <MenuItem value={1095}>3 Years</MenuItem>
         </Select>
     </div>
     

@@ -1,17 +1,14 @@
 import { convertDate } from "./convertDate";
-import { convertNumbers } from "./convertNumbers";
-export const getChartDataSet = (pricesData, label, color) => {
+export const getChartDataSet = (pricesData, color) => {
     let dataSet = {};
     if(pricesData.length > 0){
         dataSet = {
             labels: pricesData.map((item) => convertDate(item[0])),
             datasets: [
                 {
-                    label: label,
+                    label: "Price in USD",
                     data: pricesData.map((item) => item[1]),
-                    fill: true,
                     tension: 0.25,
-                    backgroundColor: "#240b26",
                     borderColor: color,
                     pointRadius: 0,
                 },
