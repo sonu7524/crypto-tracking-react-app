@@ -5,6 +5,8 @@ import iphone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
+import { RWebShare } from "react-web-share";
+
 
 function MainComponent() {
 
@@ -37,7 +39,16 @@ function MainComponent() {
                 transition={{duration: 2}} 
                 className="button-container">
                     <Link to="/dashboard"><Button onClick={()=> console.log("button clicked")} text="Dashboard" /></Link>
-                    <Button text="Share" outLined={true} />
+                    <RWebShare
+                        data={{
+                            text: "Crypto Dashboard made using React JS.",
+                            url: "https://trackcryptopro.vercel.app/",
+                            title: "CryptoDashboard.",
+                        }}
+                        onClick={() => console.log("shared successfully!")}
+                    >
+                    <Button text="Share" outlined={true} />
+                    </RWebShare>
                 </motion.div>
             </div>
             <motion.div
