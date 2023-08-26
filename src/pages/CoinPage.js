@@ -25,7 +25,7 @@ function CoinPage() {
         if(id){
             getData();
         }
-    },[id, days, coinData, dataSet, isLoading]);
+    },[id]);
 
     async function getData(){
         const data = await getCoinData(id);

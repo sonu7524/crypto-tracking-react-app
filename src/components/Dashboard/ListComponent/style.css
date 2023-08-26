@@ -29,6 +29,48 @@
     text-align: right !important;
 }
 
+.watchlist-icon-red{
+    text-align: center !important;
+    width: 2rem !important;
+    border-radius: 5rem !important;
+    color: red;
+    border: 1px solid red;
+}
+.watchlist-icon-green{
+    text-align: center !important;
+    width: 2rem !important;
+    border-radius: 5rem !important;
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+.watchlist-icon {
+    padding: 0.5rem;
+    display: block;
+    color: var(--green);
+    font-size: 2rem !important;
+    margin-left: auto;
+    border: 2px solid var(--green);
+    border-radius: 3rem;
+    font-weight: 600;
+  }
+  
+  .watchlist-icon:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+  }
+  
+  .watchlist-icon-red {
+    color: var(--red);
+    border: 2px solid var(--red);
+  }
+  
+  .watchlist-icon-red:hover {
+    background-color: var(--red) !important;
+    color: var(--white);
+    transition: all 0.3s;
+  }
+
 .mobile-mkt-cap{
     display: none !important;
 }
@@ -120,5 +162,9 @@
     tr{
         border-radius: 0.1rem;
     }
+    .watchlist-icon {
+        font-size: 1rem !important;
+        padding: 0.35rem;
+      }
 }
 

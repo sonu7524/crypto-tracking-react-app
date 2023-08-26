@@ -8,8 +8,9 @@ import GridComponent from '../GridComponent';
 import "./style.css";
 import ListComponent from '../ListComponent';
 
-function TabsComponent({coins}) {
+function TabsComponent({coins, isWatchList, setIsWatchList, watchList, setWatchList}) {
   const [value, setValue] = useState('grid');
+  
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -40,13 +41,13 @@ function TabsComponent({coins}) {
         </div>
         <TabPanel className='grid-view' value="grid">
             {coins.map((coin, id) =>{
-              return <GridComponent key={id} coin={coin} />
+              return <GridComponent key={id} coin={coin} isWatchList={isWatchList} setIsWatchList={setIsWatchList} watchList={watchList} setWatchList={setWatchList} />
             } )}
         </TabPanel>
         <TabPanel className='list-view' value="list">
             <table className="list-table">
                 {coins.map((coin, id) =>{
-                      return <ListComponent key={id} coin={coin} />
+                      return <ListComponent key={id} coin={coin} isWatchList={isWatchList} setIsWatchList={setIsWatchList} watchList={watchList} setWatchList={setWatchList} />
                 })}
             </table>
         </TabPanel>
