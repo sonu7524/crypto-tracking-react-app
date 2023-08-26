@@ -48,6 +48,7 @@ function Header() {
     <span class="actual-text">&nbsp;TrackCryptoPro.&nbsp;</span>
     <span class="hover-text" aria-hidden="true">&nbsp;TrackCryptoPro.&nbsp;</span>
 </button>
+        
       <div className="links">
       <Switch
           checked={darkMode}
