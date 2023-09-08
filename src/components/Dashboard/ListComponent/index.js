@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import "./style.css";
+import "./styles.css";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { Tooltip } from "@mui/material";
 import {convertNumbers} from "../../../functions/convertNumbers";
 import {motion} from 'framer-motion';
 import { Link } from "react-router-dom";
-import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import { IconButton } from "@mui/material";
 import { addToWatchlist } from "../../../functions/addToWatchlist";

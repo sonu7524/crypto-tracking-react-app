@@ -29,20 +29,6 @@
     text-align: right !important;
 }
 
-.watchlist-icon-red{
-    text-align: center !important;
-    width: 2rem !important;
-    border-radius: 5rem !important;
-    color: red;
-    border: 1px solid red;
-}
-.watchlist-icon-green{
-    text-align: center !important;
-    width: 2rem !important;
-    border-radius: 5rem !important;
-    color: var(--green);
-    border: 1px solid var(--green);
-}
 .watchlist-icon {
     padding: 0.5rem;
     display: block;
@@ -59,6 +45,22 @@
     color: var(--white);
     transition: all 0.3s;
   }
+
+.watchlist-icon-red{
+    text-align: center !important;
+    width: 2rem !important;
+    border-radius: 5rem !important;
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+.watchlist-icon-green{
+    text-align: center !important;
+    width: 2rem !important;
+    border-radius: 5rem !important;
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
   
   .watchlist-icon-red {
     color: var(--red);
@@ -165,6 +167,6 @@
     .watchlist-icon {
         font-size: 1rem !important;
         padding: 0.35rem;
-      }
+    }
 }
 

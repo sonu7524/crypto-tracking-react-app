@@ -9,6 +9,8 @@ export const getChartDataSet = (pricesData, color) => {
                     label: "Price in USD",
                     data: pricesData.map((item) => item[1]),
                     tension: 0.25,
+                    fill: true,
+                    backgroundColor: "#200c3e",
                     borderColor: color,
                     pointRadius: 0,
                 },
