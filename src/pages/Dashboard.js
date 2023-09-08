@@ -53,7 +53,6 @@ function DashboardPage() {
         
         <SearchComponent search={search} onSearchChange={onSearchChange}/>
         <TabsComponent coins={search ? filteredCoins : paginatedCoins} />
-        <ToastContainer />
         {search ? null : <PaginationComponent page={page} handleChange={(event,value)=> handleChange(event, value)} />}
     </div>}
     </>
