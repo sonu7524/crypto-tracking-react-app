@@ -16,7 +16,7 @@ function CoinPage() {
 
     const {id} = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [coinData, setCoinData] = useState();
+    const [coinData, setCoinData] = useState({});
     const [days, setDays] = useState(30);
     const [dataSet, setDataSet] = useState({});
     const [priceType, setPriceType] = useState('current_price');
@@ -25,15 +25,17 @@ function CoinPage() {
         if(id){
             getData();
         }
-    },[id]);
+    },[id,days,priceType]);
+    console.log(days);
 
     async function getData(){
         const data = await getCoinData(id);
+        console.log(data);
         if(data){
             convertCoinObject(setCoinData, data);
             const pricesData = await getCoinPrices(id, days, priceType);
             if(pricesData){
-                
+                console.log(pricesData);
                 setDataSet(getChartDataSet(pricesData, "#8a3ffc"));
                 
                 setIsLoading(false);
@@ -53,7 +55,7 @@ function CoinPage() {
                 </div>
                 <div className="grey-wrapper">
                     <SelectDays days={days} setDays={setDays} />
-                    <ToggleComponent alignment={priceType} setPriceType={setPriceType} />
+                    <ToggleComponent priceType={priceType} setPriceType={setPriceType} />
                     <LineChart priceType={priceType} chartData={dataSet} />
                 </div>
                 <CoinInfo heading={coinData.name} desc={coinData.desc} />

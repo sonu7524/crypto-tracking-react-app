@@ -8,6 +8,7 @@ export default function ToggleComponent({priceType, setPriceType}) {
 
   const handleChange = (event, value) => {
     setPriceType(value);
+    console.log(value);
   };
 
   const theme = createTheme({
@@ -26,7 +27,7 @@ export default function ToggleComponent({priceType, setPriceType}) {
           sx={{border:"1px solid var(--purple)", borderRadius:"5px"}}
           value={priceType}
           exclusive
-          onChange={handleChange}
+          onChange={(e,v) => handleChange(e,v)}
           aria-label="Platform"
         >
       <ToggleButton sx={{color:"var(--purple)", border:"1px solid var(--grey)"}} value="current_price">PRICE</ToggleButton>

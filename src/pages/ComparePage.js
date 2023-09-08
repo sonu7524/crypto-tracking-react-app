@@ -25,7 +25,7 @@ export default function ComparePage() {
 
     useEffect(() => {
         getData();
-    },[]);
+    },[crypto1,crypto2,days,priceType]);
 
     async function getData(){
         const data1 = await getCoinData(crypto1);

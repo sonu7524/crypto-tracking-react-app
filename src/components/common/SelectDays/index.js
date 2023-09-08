@@ -27,8 +27,7 @@ export default function SelectGroup({days, setDays}) {
                 },
             },
         }}
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+
           label="Days"
           value={days}
           onChange={handleSelectChange}

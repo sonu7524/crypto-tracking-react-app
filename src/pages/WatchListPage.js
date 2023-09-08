@@ -3,7 +3,7 @@ import Button from "../components/common/button";
 import Header from "../components/common/header";
 import Loader from "../components/common/Loader";
 import TabsComponent from "../components/Dashboard/TabsComponent";
-import {fetchCoins} from "../functions/fetchCoins"
+import {fetchCoins} from "../functions/fetchCoins";
 
 function WatchlistPage() {
   const coins = JSON.parse(localStorage.getItem("watchlist"));
