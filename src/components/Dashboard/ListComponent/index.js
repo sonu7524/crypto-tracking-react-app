@@ -12,6 +12,8 @@ import { addToWatchlist } from "../../../functions/addToWatchlist";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import { hasBeenAdded } from "../../../functions/hasBeenAdded";
 import { removeFromWatchlist } from "../../../functions/removeFromWatchlist";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ListComponent({ coin, delay, isWatchlistPage }) {
     const [added, setAdded] = useState(hasBeenAdded(coin.id));
@@ -93,8 +95,10 @@ function ListComponent({ coin, delay, isWatchlistPage }) {
                 } `}
               />
             )}
+             
           </IconButton>
         </td>
+        <ToastContainer />
     </motion.tr>
     </Link>
   );

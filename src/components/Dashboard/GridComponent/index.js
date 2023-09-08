@@ -10,6 +10,9 @@ import { addToWatchlist } from "../../../functions/addToWatchlist";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import { hasBeenAdded } from "../../../functions/hasBeenAdded";
 import { removeFromWatchlist } from "../../../functions/removeFromWatchlist";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 export default function GridComponent({ coin, delay, isWatchlistPage }) {
@@ -75,6 +78,7 @@ export default function GridComponent({ coin, delay, isWatchlistPage }) {
                     <TrendingUpIcon className="green" />
                 </div>
             )}
+            <ToastContainer />
         </div>
         <div className="current-price">
         {coin.price_change_percentage_24h < 0 ? 

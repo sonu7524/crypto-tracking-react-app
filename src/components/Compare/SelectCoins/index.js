@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { MenuItem, Select } from "@mui/material";
 import { fetchCoins } from "../../../functions/fetchCoins";
 import './styles.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SelectCoins({crypto1, crypto2, setCrypto1, setCrypto2}){
     let [coins, setCoins] = useState([]);
@@ -82,6 +84,7 @@ export default function SelectCoins({crypto1, crypto2, setCrypto1, setCrypto2}){
         >
           {coins.map((coin) => <MenuItem value={coin.id}>{coin.name}</MenuItem>)}
         </Select>
+        <ToastContainer />
         </div>
         </div>
     )
