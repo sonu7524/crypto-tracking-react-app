@@ -57,11 +57,11 @@
     font-weight: 600;
 }
   
-  .watchlist-icon-red:hover {
+.watchlist-icon-red:hover {
     background-color: var(--red) !important;
     color: var(--white);
     transition: all 0.3s;
-  }
+}
 
 .mobile-mkt-cap{
     display: none !important;
