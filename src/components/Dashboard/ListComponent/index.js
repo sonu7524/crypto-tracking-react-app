@@ -56,7 +56,7 @@ function ListComponent({ coin, delay, isWatchlistPage }) {
         <Tooltip title="Current Price" placement="bottom">
         <td className="cureent-price td-align-center">
         {coin.price_change_percentage_24h < 0 ? 
-            <p className="current-price-red td-price">${coin.current_price.toFixed(3)}</p> : <p className="current-price-green td-price">${coin.current_price.toFixed(3)}</p>
+            <p className="current-price-red td-price">${coin.current_price.toFixed(2)}</p> : <p className="current-price-green td-price">${coin.current_price.toFixed(2)}</p>
         }
         </td>
         </Tooltip>
