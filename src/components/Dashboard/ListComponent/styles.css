@@ -144,9 +144,9 @@
     }
     .td-percentage{
         font-size: 0.6rem;
-        padding: 0.1rem 0.3rem;
+        padding: 0.1rem;
         border-radius: 1rem;
-        min-width: 50px;
+        min-width: 40px;
     }
     .mobile-mkt-cap{
         font-size: 0.7rem;
